@@ -32,8 +32,10 @@ const run = async () => {
 run().catch(console.dir)
 
 app.get('/', async (req, res) => {
-    res.send('bugtracker server is running')
+    res.send('itracker server is running')
 })
+
+app.use('/', Routes)
 
 app.listen(port, () => {
     console.log('server is running on port', port)
