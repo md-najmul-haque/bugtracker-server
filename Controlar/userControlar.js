@@ -23,7 +23,15 @@ export const signup = async (req, res) => {
 //signin API
 export const login = async (req, res) => {
 
+    const email = req.body.email;
+    const password = req.body.password
+    const user = await User.findOne({ email: email, password: password })
     try {
+        if (user) {
+            return res.status(200).json({ data: user })
+        } else {
+            return res.status(401).json('invalid login request.')
+        }
 
     }
     catch (error) {
