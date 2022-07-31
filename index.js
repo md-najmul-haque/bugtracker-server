@@ -1,8 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const { default: mongoose } = require('mongoose');
+import Routes from './routes/routes.js'
+import express from 'express';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv'
+dotenv.config()
+
 const app = express();
-require('dotenv').config()
+
 
 const port = process.env.PORT || 5000;
 
@@ -32,8 +36,10 @@ const run = async () => {
 run().catch(console.dir)
 
 app.get('/', async (req, res) => {
-    res.send('bugtracker server is running')
+    res.send('itracker server is running')
 })
+
+app.use('/', Routes)
 
 app.listen(port, () => {
     console.log('server is running on port', port)
