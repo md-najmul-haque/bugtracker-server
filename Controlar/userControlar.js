@@ -1,4 +1,4 @@
-import User from "../model/userSchema"
+import User from "../model/userSchema.js"
 
 //signup API
 
@@ -21,7 +21,7 @@ export const signup = async (req, res) => {
 }
 
 //signin API
-export const login = async (req, res) => {
+export const signin = async (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password

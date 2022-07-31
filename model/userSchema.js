@@ -1,4 +1,5 @@
-const { default: mongoose } = require("mongoose");
+// const { default: mongoose } = require("mongoose");
+import { mongoose } from "mongoose";
 
 const userSchema = new mongoose.Schema({
     userName: {
