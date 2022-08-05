@@ -1,4 +1,3 @@
-// const { default: mongoose } = require("mongoose");
 import { mongoose } from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -14,10 +13,6 @@ const userSchema = new mongoose.Schema({
         require: true,
         trim: true,
         unique: true,
-    },
-    password: {
-        type: String,
-        require: true,
     }
 })
 
