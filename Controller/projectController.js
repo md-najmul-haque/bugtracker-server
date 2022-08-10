@@ -1,5 +1,6 @@
 import Project from "../model/projectSchema.js";
 
+//add project api
 export const addProject = async (req, res) => {
     try {
         const project = req.body;
