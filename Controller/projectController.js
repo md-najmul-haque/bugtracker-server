@@ -1,4 +1,3 @@
-import { response } from 'express';
 import { Project } from '../model/projectSchema'
 
 export const addProject = async () => {
@@ -6,12 +5,9 @@ export const addProject = async () => {
         const project = req.body;
         const newProject = new Project(project);
         await newProject.save();
-        response.status(200).json({ message: project })
+        res.status(200).json({ message: project })
     } catch (error) {
-        console.log(res.status(500).json({
-            message: err.message,
-        }))
-
+        console.log(res.status(500).json({ message: err.message }))
     }
 
 }
