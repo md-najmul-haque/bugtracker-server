@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
         require: true,
         trim: true,
         unique: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now()
     }
 })
 
