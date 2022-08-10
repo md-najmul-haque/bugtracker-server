@@ -1,6 +1,6 @@
-import { Project } from '../model/projectSchema'
+import Project from "../model/projectSchema.js";
 
-export const addProject = async () => {
+export const addProject = async (req, res) => {
     try {
         const project = req.body;
         const newProject = new Project(project);
