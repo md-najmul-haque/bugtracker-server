@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const meetingSchema = new mongoose.schema({
+const meetingSchema = new mongoose.Schema({
     meetingTitle: {
         type: String,
         require: true,
