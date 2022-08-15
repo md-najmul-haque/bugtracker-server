@@ -31,7 +31,7 @@ const meetingSchema = new mongoose.schema({
         trim: true,
     },
     date: {
-        type: String,
+        type: Date,
         require: true,
     },
     time: {
@@ -40,6 +40,6 @@ const meetingSchema = new mongoose.schema({
     }
 })
 
-const addMeeting = mongoose.model('addMeeting', meetingSchema);
+const meeting = mongoose.model('meeting', meetingSchema);
 
-export default addMeeting; 
+export default meeting;
