@@ -20,6 +20,6 @@ router.post('/add-review', addReview);
 router.get('/showReview', showReview);
 
 // add & get meeting API
-router.post('/addMeeting', addMeeting);
+router.put('/addMeeting/:id', addMeeting);
 
 export default router; 
