@@ -1,4 +1,5 @@
 import Meeting from "../model/meetingSchema.js";
+import mongoose from 'mongoose';
 
 export const addMeeting = async (req, res) => {
 
@@ -20,10 +21,24 @@ export const addMeeting = async (req, res) => {
 
 }
 
-export const updateMeeitng = async (req, res) => {
+export const updateMeeting = async (req, res) => {
 
     const result = await Meeting.findByIdAndUpdate(
-        {}
+        { id: req.params._id },
+        {
+            $set: {
+                meeting: req.body
+            }
+        },
+        { new: true },
+        (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.status(200).json({ message: 'meeting updated successfully' })
+            }
+        }
     )
 
 }

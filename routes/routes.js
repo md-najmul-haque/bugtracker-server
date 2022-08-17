@@ -2,7 +2,7 @@ import express from 'express'
 import { addProject, getProject, } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
-import { addMeeting } from '../Controller/meetingController.js';
+import { addMeeting, updateMeeting } from '../Controller/meetingController.js';
 
 const router = express.Router();
 
@@ -20,5 +20,6 @@ router.get('/showReview', showReview);
 
 // add & get meeting API
 router.post('/addMeeting', addMeeting);
+router.patch('/updateMeeting', updateMeeting);
 
 export default router; 
