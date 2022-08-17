@@ -33,6 +33,18 @@ export const getMeeting = async (req, res) => {
     }
 }
 
+
+//GET Selected Meeting API 
+export const selectedMeeting = async (req, res) => {
+    try {
+        const meeting = await Meeting.findOne({ _id: req.params.id })
+        res.status(200).json(meeting)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
+
 // Meeting update(patch) API
 export const updateMeeting = async (req, res) => {
 
@@ -44,14 +56,14 @@ export const updateMeeting = async (req, res) => {
             }
         },
         // { new: true },
-        (err) => {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                res.status(200).json({ message: 'meeting updated successfully' })
-            }
-        }
+        // (err) => {
+        //     if (err) {
+        //         console.log(err);
+        //     }
+        //     else {
+        //         res.status(200).json({ message: 'meeting updated successfully' })
+        //     }
+        // }
     )
 
 }
