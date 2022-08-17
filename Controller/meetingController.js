@@ -54,3 +54,20 @@ export const updateMeeting = async (req, res) => {
     )
 
 }
+
+// Meeting delete API
+export const deleteMeeting = async (req, res) => {
+    const result = await Meeting.findByIdAndDelete(
+        { id: req.params._id },
+
+        (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.status(200).json({ message: 'meeting deleted successfully' })
+            }
+        }
+    )
+
+}

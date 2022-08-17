@@ -2,7 +2,7 @@ import express from 'express'
 import { addProject, getProject, } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
-import { addMeeting, updateMeeting, getMeeting } from '../Controller/meetingController.js';
+import { addMeeting, updateMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
 
 const router = express.Router();
 
@@ -22,5 +22,6 @@ router.get('/showReview', showReview);
 router.post('/addMeeting', addMeeting);
 router.get('/getMeeting', getMeeting);
 router.patch('/updateMeeting', updateMeeting);
+router.delete('/deleteMeeting', deleteMeeting);
 
 export default router; 
