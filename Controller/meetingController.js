@@ -10,7 +10,8 @@ export const addMeeting = async (req, res) => {
         if (result) {
             return res.status(401).json({ message: 'Meeting already exist' })
         } else {
-            const meeting = res.body;
+            const meeting = req.body;
+            console.log(meeting)
             const newMeeting = new Meeting(meeting)
             await newMeeting.save()
             res.status(200).json({ message: 'New meeting added successfully' })
