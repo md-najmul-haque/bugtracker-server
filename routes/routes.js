@@ -21,7 +21,7 @@ router.get('/showReview', showReview);
 // add & get meeting API
 router.post('/addMeeting', addMeeting);
 router.get('/getMeeting', getMeeting);
-router.patch('/updateMeeting', updateMeeting);
-router.delete('/deleteMeeting', deleteMeeting);
+router.patch('/updateMeeting/:id', updateMeeting);
+router.delete('/deleteMeeting/:id', deleteMeeting);
 
 export default router; 

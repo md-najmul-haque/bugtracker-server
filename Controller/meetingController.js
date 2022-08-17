@@ -37,13 +37,13 @@ export const getMeeting = async (req, res) => {
 export const updateMeeting = async (req, res) => {
 
     const result = await Meeting.findByIdAndUpdate(
-        { id: req.params._id },
+        { _id: req.params.id },
         {
             $set: {
                 meeting: req.body
             }
         },
-        { new: true },
+        // { new: true },
         (err) => {
             if (err) {
                 console.log(err);
@@ -58,17 +58,12 @@ export const updateMeeting = async (req, res) => {
 
 // Meeting delete API
 export const deleteMeeting = async (req, res) => {
-    const result = await Meeting.findByIdAndDelete(
-        { id: req.params._id },
+    const result = await Meeting.findOneAndDelete({ _id: req.params.id })
 
-        (err) => {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                res.status(200).json({ message: 'meeting deleted successfully' })
-            }
-        }
-    )
+    try {
+        res.status(200).json({ message: 'meeting deleted successfully' })
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
 
 }
