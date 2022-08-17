@@ -4,7 +4,6 @@ import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
 import { addMeeting } from '../Controller/meetingController.js';
 
-
 const router = express.Router();
 
 // login signup API
@@ -20,6 +19,6 @@ router.post('/add-review', addReview);
 router.get('/showReview', showReview);
 
 // add & get meeting API
-router.put('/addMeeting/:id', addMeeting);
+router.post('/addMeeting', addMeeting);
 
 export default router; 
