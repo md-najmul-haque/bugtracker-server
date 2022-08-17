@@ -32,6 +32,7 @@ export const getMeeting = async (req, res) => {
     }
 }
 
+// Meeting update(patch) API
 export const updateMeeting = async (req, res) => {
 
     const result = await Meeting.findByIdAndUpdate(
