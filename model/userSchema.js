@@ -17,6 +17,34 @@ const userSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now()
+    },
+    address: {
+        type: String,
+        require: true,
+    },
+    city: {
+        type: String,
+        require: true,
+    },
+    facebook: {
+        type: String,
+        require: true,
+    },
+    github: {
+        type: String,
+        require: true,
+    },
+    linkedin: {
+        type: String,
+        require: true,
+    },
+    phone: {
+        type: String,
+        require: true,
+    },
+    twitter: {
+        type: String,
+        require: true,
     }
 })
 
