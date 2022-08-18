@@ -15,7 +15,6 @@ export const addProject = async (req, res) => {
     } catch (err) {
         console.log(res.status(500).json({ message: err.message }))
     }
-
 }
 
 export const getProject = async (req, res) => {
