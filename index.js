@@ -1,7 +1,7 @@
 import Routes from './routes/routes.js'
 import express from 'express';
 import cors from 'cors';
-import connection from "./DataBase/serverDB.js";
+import connection from './DataBase/ServerDB.js'
 import dotenv from 'dotenv'
 import bodyParser from "body-parser";
 dotenv.config()
