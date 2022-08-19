@@ -26,7 +26,7 @@ router.get('/userInfo/:email', profileInfo);
 // add & get meeting API
 router.post('/addMeeting', addMeeting);
 router.get('/getMeeting', getMeeting);
-router.patch('/selectedMeeting/:id', selectedMeeting);
+router.get('/selectedMeeting/:id', selectedMeeting);
 router.patch('/updateMeeting/:id', updateMeeting);
 router.delete('/deleteMeeting/:id', deleteMeeting);
 

@@ -71,6 +71,7 @@ export const updateMeeting = async (req, res) => {
 // Meeting delete API
 export const deleteMeeting = async (req, res) => {
     const result = await Meeting.findOneAndDelete({ _id: req.params.id })
+    console.log(_id)
 
     try {
         res.status(200).json({ message: 'meeting deleted successfully' })
