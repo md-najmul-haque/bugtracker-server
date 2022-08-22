@@ -23,12 +23,16 @@ router.get('/showReview', showReview);
 router.put('/updateProfile/:email', updateProfile);
 router.get('/userInfo/:email', profileInfo);
 
-// add & get meeting API
+// meeting API
 router.post('/addMeeting', addMeeting);
 router.get('/getMeeting', getMeeting);
 router.get('/selectedMeeting/:id', selectedMeeting);
 router.patch('/updateMeeting/:id', updateMeeting);
 router.delete('/deleteMeeting/:id', deleteMeeting);
+
+// meeting API
+router.post('/addList', addList);
+router.get('/getList', addList);
 
 
 export default router; 
