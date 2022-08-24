@@ -1,18 +1,34 @@
 import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
-    Title: {
+    issueName: {
         type: String,
         require: true,
         trim: true,
         min: 4,
         max: 20,
     },
-    task: {
+    description: {
         type: String,
         trim: true,
         min: 10,
         max: 150,
+    },
+    email: {
+        type: String,
+        trim: true,
+    },
+    dueData: {
+        type: Date,
+        require: true,
+    },
+    priority: {
+        type: String,
+        require: true,
+    },
+    status: {
+        type: String,
+        require: true,
     },
     date: {
         type: Date,
@@ -21,6 +37,6 @@ const taskSchema = new mongoose.Schema({
 
 })
 
-const task = mongoose.model('lists', taskSchema);
+const task = mongoose.model('task', taskSchema);
 
 export default task;
