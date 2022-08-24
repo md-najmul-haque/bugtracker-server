@@ -22,6 +22,10 @@ const taskSchema = new mongoose.Schema({
         type: Date,
         require: true,
     },
+    stage: {
+        type: String,
+        require: true,
+    },
     priority: {
         type: String,
         require: true,
