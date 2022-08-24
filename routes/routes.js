@@ -4,7 +4,7 @@ import { addProject, getProject, } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
 import { addMeeting, updateMeeting, getMeeting, selectedMeeting, deleteMeeting } from '../Controller/meetingController.js';
-
+import { addTask, getTask } from '../Controller/taskController.js';
 const router = express.Router();
 
 // login signup API
@@ -14,6 +14,10 @@ router.post('/signin', signin);
 // add & project API
 router.post('/addProject', addProject);
 router.get('/getProject', getProject);
+
+// Task API
+router.post('/addTask', addTask);
+router.get('/getTask', getTask);
 
 // add & get Review API
 router.post('/add-review', addReview);
@@ -30,9 +34,7 @@ router.get('/selectedMeeting/:id', selectedMeeting);
 router.patch('/updateMeeting/:id', updateMeeting);
 router.delete('/deleteMeeting/:id', deleteMeeting);
 
-// meeting API
-router.post('/addList', addList);
-router.get('/getList', addList);
+
 
 
 export default router; 
