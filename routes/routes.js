@@ -5,6 +5,7 @@ import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
 import { addMeeting, updateMeeting, getMeeting, selectedMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
+import { addTask, getTask } from '../Controller/taskController.js';
 const router = express.Router();
 
 // login signup API
@@ -15,6 +16,10 @@ router.post('/signin', signin);
 router.post('/addProject', addProject);
 router.get('/getProject', getProject);
 
+// Task API
+router.post('/addTask', addTask);
+router.get('/getTask', getTask);
+
 // add & get Review API
 router.post('/add-review', addReview);
 router.get('/showReview', showReview);
@@ -23,7 +28,7 @@ router.get('/showReview', showReview);
 router.put('/updateProfile/:email', updateProfile);
 router.get('/userInfo/:email', profileInfo);
 
-// add & get meeting API
+// meeting API
 router.post('/addMeeting', addMeeting);
 router.get('/getMeeting', getMeeting);
 router.get('/selectedMeeting/:id', selectedMeeting);
@@ -33,4 +38,5 @@ router.delete('/deleteMeeting/:id', deleteMeeting);
 router.post('/create', createPayment);
 router.post('/storePayment', storePayment);
 router.get('/getUserPayment', getPayment);
+
 export default router; 

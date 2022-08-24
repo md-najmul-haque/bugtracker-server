@@ -22,7 +22,8 @@ export const createPayment = async (req, res) => {
   res.send(result)
 
 } */
-// Store payment database
+
+// Store payment details in  database
 export const storePayment = async (req, res) => {
   const exist = await Payment.findOne({ email: req.body.email })
   try {
