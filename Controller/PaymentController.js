@@ -26,29 +26,28 @@ export const createPayment = async (req, res) => {
 export const storePayment = async (req, res) => {
   const exist = await Payment.findOne({ email: req.body.email })
   try {
-      if (exist) {
-          return res.status(401).json({ message: 'Your Payment already done' })
-      } else {
-          const Payments = req.body;
-          const newPayment = new Payment(Payments);
-          await newPayment.save();
-          res.send(newPayment)
-          res.status(200).json({ message: Payment })
-      }
+    if (exist) {
+      return res.status(401).json({ message: 'Your Payment already done' })
+    } else {
+      const Payments = req.body;
+      const newPayment = new Payment(Payments);
+      await newPayment.save();
+      res.status(200).json({ message: Payment })
+    }
   } catch (err) {
-      console.log(res.status(500).json({ message: err.message }))
+    console.log(res.status(500).json({ message: err.message }))
   }
 }
 
 //getpayment details in database
 export const getPayment = async (req, res) => {
-  try {
-      const payment = await Payment.find({ });
-      // console.log(projects)
-      res.status(200).json(payment)
-  } catch (error) {
-      res.status(500).json({ message: error.message })
-  }
+      try {
+        const projects = await Payment.find({email:req.query.email});
+        // console.log(projects)
+        res.status(200).json(projects)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
 }
 
 
