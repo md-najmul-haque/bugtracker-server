@@ -1,5 +1,5 @@
 import Meeting from "../model/meetingSchema.js";
-import mongoose from 'mongoose';
+
 
 // Meeting POST API
 export const addMeeting = async (req, res) => {
