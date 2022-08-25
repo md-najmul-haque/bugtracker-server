@@ -4,6 +4,7 @@ import { addProject, getProject, } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
 import { addMeeting, updateMeeting, getMeeting, selectedMeeting, deleteMeeting } from '../Controller/meetingController.js';
+import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
 const router = express.Router();
 
@@ -33,8 +34,9 @@ router.get('/getMeeting', getMeeting);
 router.get('/selectedMeeting/:id', selectedMeeting);
 router.patch('/updateMeeting/:id', updateMeeting);
 router.delete('/deleteMeeting/:id', deleteMeeting);
-
-
-
+//create-payment API
+router.post('/create', createPayment);
+router.post('/storePayment', storePayment);
+router.get('/getUserPayment', getPayment);
 
 export default router; 
