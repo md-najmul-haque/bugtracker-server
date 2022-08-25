@@ -1,8 +1,8 @@
 import express from 'express'
-import { profileInfo, updateProfile } from '../Controller/profileController.js';
-import { addProject, getProject, } from '../Controller/projectController.js';
+import { profileInfo, updateProfile,getUser } from '../Controller/profileController.js';
+import { addProject, getProject, totalProject} from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
-import { signin, signup } from '../Controller/userController.js'
+import { signin, signup} from '../Controller/userController.js'
 import { addMeeting, updateMeeting, getMeeting, selectedMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
@@ -15,6 +15,7 @@ router.post('/signin', signin);
 // add & project API
 router.post('/addProject', addProject);
 router.get('/getProject', getProject);
+router.get('/totalProject', totalProject);
 
 // Task API
 router.post('/addTask', addTask);
@@ -27,6 +28,7 @@ router.get('/showReview', showReview);
 // get & put user information API
 router.put('/updateProfile/:email', updateProfile);
 router.get('/userInfo/:email', profileInfo);
+router.get('/getUser', getUser);
 
 // meeting API
 router.post('/addMeeting', addMeeting);
