@@ -1,9 +1,9 @@
 import express from 'express'
 import { profileInfo, updateProfile } from '../Controller/profileController.js';
-import { addProject, getProject, } from '../Controller/projectController.js';
+import { addProject, getProject, selectedProject } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
-import { addMeeting, updateMeeting, getMeeting, selectedMeeting, deleteMeeting } from '../Controller/meetingController.js';
+import { addMeeting, updateMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
 const router = express.Router();
@@ -15,6 +15,7 @@ router.post('/signin', signin);
 // add & project API
 router.post('/addProject', addProject);
 router.get('/getProject', getProject);
+router.get('/selectedProject/:id', selectedProject);
 
 // Task API
 router.post('/addTask', addTask);

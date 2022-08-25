@@ -26,3 +26,14 @@ export const getProject = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
+//GET Selected Project API 
+export const selectedProject = async (req, res) => {
+    try {
+        const project = await Project.findOne({ _id: req.params.id })
+        console.log(_id)
+        res.status(200).json(project)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
