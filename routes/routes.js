@@ -3,9 +3,10 @@ import { profileInfo, updateProfile } from '../Controller/profileController.js';
 import { addProject, getProject, selectedProject } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
-import { addMeeting, updateMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
+import { addMeeting, updateMeeting, getMeeting, deleteMeeting, selectedMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
+import { allUser } from '../Controller/usersController.js';
 const router = express.Router();
 
 // login signup API
@@ -39,5 +40,8 @@ router.delete('/deleteMeeting/:id', deleteMeeting);
 router.post('/create', createPayment);
 router.post('/storePayment', storePayment);
 router.get('/getUserPayment', getPayment);
+
+// get all user
+router.get('/user',allUser)
 
 export default router; 
