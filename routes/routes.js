@@ -6,6 +6,8 @@ import { signin, signup } from '../Controller/userController.js'
 import { addMeeting, updateMeeting, selectedMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
+import { allUser } from '../Controller/adminController.js'
+
 const router = express.Router();
 
 // login signup API
@@ -39,5 +41,8 @@ router.delete('/deleteMeeting/:id', deleteMeeting);
 router.post('/create', createPayment);
 router.post('/storePayment', storePayment);
 router.get('/getUserPayment', getPayment);
+
+// get all user
+router.get('/user', allUser)
 
 export default router; 
