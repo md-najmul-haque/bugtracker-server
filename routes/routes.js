@@ -3,7 +3,7 @@ import { profileInfo, updateProfile } from '../Controller/profileController.js';
 import { addProject, getProject, selectedProject } from '../Controller/projectController.js';
 import { addReview, showReview } from '../Controller/reviewController.js';
 import { signin, signup } from '../Controller/userController.js'
-import { addMeeting, updateMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
+import { addMeeting, updateMeeting, selectedMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
 import { addTask, getTask } from '../Controller/taskController.js';
 const router = express.Router();
