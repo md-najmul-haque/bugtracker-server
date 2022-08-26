@@ -40,3 +40,12 @@ export const profileInfo = async (req, res) => {
   const singleUser = await User.findOne(query);
   res.send(singleUser);
 }
+//get all users
+export const getUser = async (req, res) => {
+  try {
+      const users = await User.find({});
+      res.status(200).json(users)
+  } catch (error) {
+      res.status(500).json({ message: error.message })
+  }
+}

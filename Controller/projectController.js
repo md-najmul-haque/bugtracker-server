@@ -26,7 +26,15 @@ export const getProject = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
-
+export const totalProject = async (req, res) => {
+    try {
+        const totalprojects = await Project.find({email:req.query.email});
+        // console.log(projects)
+        res.status(200).json(totalprojects)
+    }catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
 //GET Selected Project API 
 export const selectedProject = async (req, res) => {
     try {
