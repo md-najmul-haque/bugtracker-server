@@ -3,7 +3,7 @@ import Task from "../model/taskSchema.js";
 // Meeting POST API
 export const addTask = async (req, res) => {
 
-    const result = await Task.findOne({ task: req.body.task })
+    const result = await Task.findOne({ issueName: req.body.issueName })
 
     try {
         if (result) {

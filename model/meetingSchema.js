@@ -37,9 +37,6 @@ const meetingSchema = new mongoose.Schema({
     time: {
         type: String,
         require: true,
-    },
-    time: {
-        type: String,
     }
 })
 
