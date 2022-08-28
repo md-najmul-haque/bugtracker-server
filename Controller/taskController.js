@@ -1,6 +1,6 @@
 import Task from "../model/taskSchema.js";
 
-// Meeting POST API
+// addTask POST API
 export const addTask = async (req, res) => {
 
     const result = await Task.findOne({ issueName: req.body.issueName })
@@ -22,11 +22,12 @@ export const addTask = async (req, res) => {
 
 }
 
-// Meeting GET API
+// task GET API
 export const getTask = async (req, res) => {
     try {
-        const task = await Task.find({})
+        const task = await Task.find({ projectId: req.query.id })
         res.status(200).json(task)
+
     } catch (error) {
         res.status(500).json({ message: error.message })
     }

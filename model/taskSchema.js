@@ -1,12 +1,10 @@
 import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
-    projectName: {
+    projectId: {
         type: String,
         require: true,
-        trim: true,
-        min: 4,
-        max: 20,
+
     },
     issueName: {
         type: String,
