@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
 const taskSchema = new mongoose.Schema({
+    projectName: {
+        type: String,
+        require: true,
+        trim: true,
+        min: 4,
+        max: 20,
+    },
     issueName: {
         type: String,
         require: true,
