@@ -10,10 +10,9 @@ export const addTask = async (req, res) => {
             return res.status(401).json({ message: 'Task already exist' })
         } else {
             const task = req.body;
-            console.log(task)
             const newTask = new Task(task)
             await newTask.save()
-            res.status(200).json({ message: 'New Task added successfully' })
+            res.status(200).json(task)
         }
 
     } catch (error) {

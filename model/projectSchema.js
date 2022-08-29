@@ -15,10 +15,13 @@ const projectSchema = new mongoose.Schema({
         min: 10,
         max: 150,
     },
+    userEmail: {
+        type: String,
+        trim: true,
+    },
     email: {
         type: String,
         trim: true,
-
     },
     startingDate: {
         type: String,
