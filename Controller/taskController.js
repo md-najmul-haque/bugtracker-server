@@ -21,10 +21,10 @@ export const addTask = async (req, res) => {
 
 }
 
-// task GET API
+// task GET API against selected project
 export const getTask = async (req, res) => {
     try {
-        const task = await Task.find({ projectId: req.query.id })
+        const task = await Task.find({ projectId: req.query.projectId })
         res.status(200).json(task)
 
     } catch (error) {
