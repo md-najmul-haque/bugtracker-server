@@ -19,19 +19,19 @@ export const addProject = async (req, res) => {
 
 export const getProject = async (req, res) => {
     try {
-        const projects = await Project.find({});
-        // console.log(projects)
+        const projects = await Project.find({ userEmail: req.query.userEmail });
         res.status(200).json(projects)
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
 }
+
 export const totalProject = async (req, res) => {
     try {
-        const totalprojects = await Project.find({email:req.query.email});
+        const totalprojects = await Project.find({ email: req.query.email });
         // console.log(projects)
         res.status(200).json(totalprojects)
-    }catch (error) {
+    } catch (error) {
         res.status(500).json({ message: error.message })
     }
 }

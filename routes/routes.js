@@ -22,7 +22,7 @@ router.get('/selectedProject/:id', selectedProject);
 
 // Task API
 router.post('/addTask', addTask);
-router.get('/getTask?:projectId', getTask);
+router.get('/getTask', getTask);
 
 // add & get Review API
 router.post('/add-review', addReview);
