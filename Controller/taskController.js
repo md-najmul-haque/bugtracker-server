@@ -3,7 +3,7 @@ import Task from "../model/taskSchema.js";
 // addTask POST API
 export const addTask = async (req, res) => {
 
-    const result = await Task.findOne({ issueName: req.body.issueName })
+    const result = await Task.findOne({ taskName: req.body.taskName })
 
     try {
         if (result) {
