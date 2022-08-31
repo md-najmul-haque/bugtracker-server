@@ -31,3 +31,22 @@ export const getTask = async (req, res) => {
         res.status(500).json({ message: error.message })
     }
 }
+
+// update task
+export const updateTask = async (req, res) => {
+    try {
+        const updateTask = req.body
+        const result = await Task.findByIdAndUpdate(
+            { id: req.params.id },
+            {
+                $set: {
+                    ...updateTask
+                }
+            },
+            { upsert: true }
+        )
+        res.status(200).json(result)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
