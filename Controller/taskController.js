@@ -32,6 +32,17 @@ export const getTask = async (req, res) => {
     }
 }
 
+// My task GET API against each user
+export const getMyTask = async (req, res) => {
+    try {
+        const myTask = await Task.find({ email: req.query.email })
+        res.status(200).json(myTask)
+
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+}
+
 // update task
 export const updateTask = async (req, res) => {
     try {
