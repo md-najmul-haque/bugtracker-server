@@ -5,7 +5,7 @@ import { signin, signup } from '../Controller/userController.js'
 import { addProject, getProject, totalProject, selectedProject } from '../Controller/projectController.js';
 import { addMeeting, updateMeeting, selectedMeeting, getMeeting, deleteMeeting } from '../Controller/meetingController.js';
 import { createPayment, storePayment, getPayment } from '../Controller/PaymentController.js'
-import { addTask, getTask } from '../Controller/taskController.js';
+import { addTask, getTask, updateTask } from '../Controller/taskController.js';
 import { allUser } from '../Controller/adminController.js'
 
 const router = express.Router();
@@ -22,7 +22,8 @@ router.get('/selectedProject/:id', selectedProject);
 
 // Task API
 router.post('/addTask', addTask);
-router.get('/getTask?:projectId', getTask);
+router.get('/getTask', getTask);
+router.patch('/updateTask/:id', updateTask);
 
 // add & get Review API
 router.post('/add-review', addReview);

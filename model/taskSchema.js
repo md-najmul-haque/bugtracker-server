@@ -6,7 +6,7 @@ const taskSchema = new mongoose.Schema({
         require: true,
 
     },
-    issueName: {
+    taskName: {
         type: String,
         require: true,
         trim: true,
