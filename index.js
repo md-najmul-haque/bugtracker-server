@@ -23,6 +23,7 @@ app.get('/', async (req, res) => {
     res.send('itracker server is running')
 })
 
+
 app.use('/', Routes)
 
 app.listen(port, () => {
