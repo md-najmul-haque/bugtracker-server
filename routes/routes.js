@@ -46,7 +46,7 @@ router.post('/create', createPayment);
 router.post('/storePayment', storePayment);
 router.get('/getUserPayment', getPayment);
 
-// get all user
+// get all user & make admin
 router.get('/user', allUser)
 
 export default router; 
