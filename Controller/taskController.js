@@ -47,8 +47,9 @@ export const getMyTask = async (req, res) => {
 export const updateTask = async (req, res) => {
     try {
         const updateTask = req.body
+        console.log(updateTask)
         const result = await Task.findByIdAndUpdate(
-            { id: req.params.id },
+            { _id: req.params.id },
             {
                 $set: {
                     ...updateTask
@@ -56,8 +57,9 @@ export const updateTask = async (req, res) => {
             },
             { upsert: true }
         )
-        res.status(200).json(result)
+        res.status(200).json({success: true, result})
+        console.log(result)
     } catch (error) {
-        res.status(500).json({ message: error.message })
+        res.status(500).json({ success: false, message: error.message })
     }
 }
